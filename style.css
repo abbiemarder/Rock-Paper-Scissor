@@ -9,11 +9,13 @@ body {
 
 p {
     font-family: 'Gajraj One', cursive;
-    font-size: 20px;
+    
 }
 
 .game {
     background-color: white;
+    max-width: 800px;
+    margin:auto;
 }
 
 .title {
@@ -25,7 +27,9 @@ p {
 .vs {
     text-decoration: none;
 }
-
+.count {
+    font-size: 30px;
+}
 h2 {
     text-decoration: underline;
     font-weight: bold;

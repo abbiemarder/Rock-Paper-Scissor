@@ -41,7 +41,7 @@ function shootScissors() {
 function playerWin() {
   playerScore++;
   playerScoreboard.innerHTML = playerScore;
-  whoWon.innerHTML = "You win :)";
+  whoWon.innerHTML = "You won :)";
 }
 
 function playerLose() {
