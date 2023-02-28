@@ -1,3 +1,67 @@
-body{
+body {
+    background: rgb(214, 27, 115);
+    background: linear-gradient(180deg, rgba(214, 27, 115, 1) 6%, rgba(236, 28, 66, 1) 31%, rgba(253, 29, 29, 1) 50%, rgba(253, 77, 42, 1) 66%, rgba(253, 127, 56, 1) 83%, rgba(252, 176, 69, 1) 100%);
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
+p {
+    font-family: 'Gajraj One', cursive;
+    font-size: 20px;
+}
+
+.game {
+    background-color: white;
+}
+
+.title {
+    padding-top: 25px;
+    font-size: 60px;
+    font-family: 'Gajraj One', cursive;
+}
+
+.vs {
+    text-decoration: none;
+}
+
+h2 {
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: 'Gajraj One', cursive;
+    font-size: 30px;
+}
+
+.reset button {
+    margin-top: 5px;
+    background-color: white;
+}
+
+.move {
+    font-size: 25px;
+    margin-bottom: 9px;
+    text-decoration: none;
+    font-family: 'Gajraj One', cursive;
+}
+
+button {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Michroma', sans-serif;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+}
+
+.header h2:hover {
+    font-size: 30px;
+    transition: 2s;
+}
+
+.header {
+    border-style: solid 3px white;
+    border-color: white;
 }

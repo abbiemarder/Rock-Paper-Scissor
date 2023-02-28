@@ -1,73 +1,75 @@
-const getUserChoice = (userInput) => {
-  userInput = userInput.toLowerCase();
-  if (userInput === "rock" || userInput === "paper" || "scissors") {
-    return userInput;
-  } else {
-    console.log("Error!");
-  }
-};
-function getComputerChoice() {
-  let randomNumber = Math.floor(Math.random() * 3);
-  switch (randomNumber) {
-    case 0:
-      return "rock";
-      break;
-    case 1:
-      return "paper";
-      break;
-    case 2:
-      return "scissors";
-      break;
-  }
+//Create set variables for player and computer
+let playerScore = 0;
+let computerScore = 0;
+let compChoice;
+let playerChoice;
+let playerScoreboard = document.querySelector(".p-count");
+let computerScoreboard = document.querySelector(".c-count");
+let whoWon = document.querySelector(".result");
+
+//Function to randomly generate a choice for the computerScore
+function computerChoice() {
+  const computerOptions = ["rock", "paper", "scissors"];
+  const randomNum = Math.floor(Math.random() * 3);
+  compChoice = computerOptions[randomNum];
 }
-function determineGameWinner(userChoice, computerChoice) {
-  if (userChoice === computerChoice) {
-    return "The game is a tie!";
-  }
-  if (userChoice === "rock") {
-    if (computerChoice === "paper") {
-      return "The computer won!";
-    } else {
-      return "You won!";
-    }
-  }
-  if (userChoice === "paper") {
-    if (computerChoice === "scissors") {
-      return "The computer won!";
-    } else {
-      return "You won!";
-    }
-  }
-  if (userChoice === "scissors") {
-    if (computerChoice === "rock") {
-      return "The computer won!";
-    } else {
-      return "You won!";
-    }
+
+function shootRock() {
+  playerChoice = "rock";
+  computerChoice();
+  console.log(playerChoice);
+  console.log(compChoice);
+  playGame(playerChoice, compChoice);
+}
+
+function shootPaper() {
+  playerChoice = "paper";
+  computerChoice();
+  console.log(playerChoice);
+  console.log(compChoice);
+  playGame(playerChoice, compChoice);
+}
+
+function shootScissors() {
+  playerChoice = "scissors";
+  computerChoice();
+  console.log(playerChoice);
+  console.log(compChoice);
+  playGame(playerChoice, compChoice);
+}
+//<!-- innerHTML gets the HTML contained within the element.-->
+function playerWin() {
+  playerScore++;
+  playerScoreboard.innerHTML = playerScore;
+  whoWon.innerHTML = "You win :)";
+}
+
+function playerLose() {
+  computerScore++;
+  computerScoreboard.innerHTML = computerScore;
+  whoWon.innerHTML = "You lose :(";
+}
+
+function playGame(player, computer) {
+  if (player === computer) {
+    whoWon.innerHTML = "It's a tie :|";
+  } else if (player === "rock" && computer === "scissors") {
+    playerWin();
+  } else if (player === "paper" && computer === "rock") {
+    playerWin();
+  } else if (player === "scissors" && computer === "paper") {
+    playerWin();
+  } else if (player === "rock" && computer === "paper") {
+    playerLose();
+  } else if (player === "paper" && computer === "scissors") {
+    playerLose();
+  } else if (player === "scissors" && computer === "rock") {
+    playerLose();
   }
 }
 
-function playerScore() {
-  let playerScore = 0;
-  if (determineGameWinner() === "You won!") {
-    playerScore += 1;
-  }
+function reset() {
+  playerScoreboard.innerHTML = "0";
+  computerScoreboard.innerHTML = "0";
+  whoWon.innerHTML = "";
 }
-
-function computerScore() {
-  let computerScore = 0;
-  if (determineGameWinner() === "The computer won!") {
-    computerScore += 1;
-  }
-}
-
-const playGame = () => {
-  const userChoice = getUserChoice("bomb");
-  const computerChoice = getComputerChoice();
-  console.log("You threw: " + userChoice);
-  console.log("The computer threw: " + computerChoice);
-  console.log(determineGameWinner(userChoice, computerChoice));
-  console.log("Your Wins: " + playerScore());
-  console.log("Computer Wins: " + computerScore());
-};
-playGame();
