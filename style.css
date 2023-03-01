@@ -16,6 +16,8 @@ p {
     background-color: white;
     max-width: 800px;
     margin:auto;
+    border-radius: 30px;
+    filter: drop-shadow(30px 10px 6px #000000);
 }
 
 .title {
