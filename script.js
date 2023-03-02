@@ -37,22 +37,23 @@ function shootScissors() {
   console.log(compChoice);
   playGame(playerChoice, compChoice);
 }
-//<!-- innerHTML gets the HTML contained within the element.-->
+//<!-- innerHTML gets the HTML contained within the element and displays when the player wins the game -->
 function playerWin() {
   playerScore++;
   playerScoreboard.innerHTML = playerScore;
   whoWon.innerHTML = "You won :)";
 }
-
+//<!-- innerHTML gets the HTML contained within the element and displays when the player loses the game -->
 function playerLose() {
   computerScore++;
   computerScoreboard.innerHTML = computerScore;
   whoWon.innerHTML = "You lose :(";
 }
-
+//<!-- innerHTML gets the HTML contained within the element and displays when the player gets a tie in the game -->
 function playGame(player, computer) {
   if (player === computer) {
     whoWon.innerHTML = "It's a tie :|";
+    //<!--Else if statements-->
   } else if (player === "rock" && computer === "scissors") {
     playerWin();
   } else if (player === "paper" && computer === "rock") {
@@ -67,7 +68,7 @@ function playGame(player, computer) {
     playerLose();
   }
 }
-
+//<--Function resets score board-->
 function reset() {
   playerScoreboard.innerHTML = "0";
   computerScoreboard.innerHTML = "0";
