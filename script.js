@@ -70,7 +70,9 @@ function playGame(player, computer) {
 }
 //<--Function resets score board-->
 function reset() {
-  playerScoreboard.innerHTML = "0";
-  computerScoreboard.innerHTML = "0";
+  computerScore = 0;
+  playerScore = 0;
+  playerScoreboard.innerHTML = playerScore;
+  computerScoreboard.innerHTML = computerScore;
   whoWon.innerHTML = "";
 }
